@@ -16,21 +16,14 @@ class LandingController extends Controller
 
     public function processLogin(Request $request){
 
-        // dd($request);
-
         $email = $request->post('email');
         $password = $request->post('password');
 
-        // dd($request->all());
-        // dd($email);
-
-        if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => '1'])) {
-            // Authentication passed...
-            // return redirect()->intended('dashboard');
-            // dd('good');
+        if(Auth::attempt(['email' => $email, 'password' => $password, 'status' => '1'])){
             return redirect()->route('dashboard.index'); 
         }else{
-            dd('failed');
+            return redirect()->route('landing.user_login_section')->withInput();
+            $request->session()->flash('error', 'Login failed. Please check and try again!');
         }
     }
 }

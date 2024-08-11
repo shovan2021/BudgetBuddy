@@ -19,8 +19,9 @@ class DashboardController extends Controller
     }
 
     public function logout(Request $request){
-        
+
         Auth::logout();
+        $request->session()->flash('success', 'You have logged out succesfully!');
         return redirect()->route('landing.user_login_section');
     }
 }

@@ -805,7 +805,7 @@
                                       </div>
                                   </div>
                               </li>                        
-                              <li class="nav-item nav-icon dropdown">
+                              {{-- <li class="nav-item nav-icon dropdown">
                                   <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   <img src="{{asset('templates/datum/images/Flag/flag001.png')}}" class="img-fluid rounded-circle" alt="user" style="height: 30px; min-width: 30px; width: 30px;">
                                   <span class="bg-primary"></span>
@@ -823,7 +823,7 @@
                                           </div>
                                       </div>
                                   </div>
-                              </li>
+                              </li> --}}
                               <li class="nav-item nav-icon search-content">
                                   <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       <svg class="svg-icon text-secondary" id="h-suns" height="25" width="25" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -846,7 +846,7 @@
                               <li class="nav-item nav-icon dropdown">
                                   <a href="#" class="nav-item nav-icon dropdown-toggle pr-0 search-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                       <img src="{{asset('templates/datum/images/user/1.jpg')}}" class="img-fluid avatar-rounded" alt="user">
-                                      <span class="mb-0 ml-2 user-name">John Doe</span>
+                                      <span class="mb-0 ml-2 user-name">{{$user_details->full_name}}</span>
                                   </a>
                                   <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                       <li class="dropdown-item d-flex svg-icon">

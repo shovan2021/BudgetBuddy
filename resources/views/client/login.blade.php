@@ -22,6 +22,12 @@
     </div>
     <!-- loader END -->
 
+
+    @if(session()->has('error'))
+        <div class="alert alert-primary" role="alert">
+            <div class="iq-alert-text">A simple <b>primary</b> alert—check it out!</div>
+        </div>
+    @endif
     <div class="wrapper">
         <section class="login-content">
             <div class="container h-100">
@@ -82,7 +88,7 @@
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="text-secondary">Email</label>
-                                                <input class="form-control" type="email" name="email" placeholder="Enter Email">
+                                                <input class="form-control" type="email" name="email" placeholder="Enter Email" value="{{old('email')}}">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mt-2">
@@ -91,7 +97,7 @@
                                                     <label class="text-secondary">Password</label>
                                                     <label><a href="auth-recover-pwd.html">Forgot Password?</a></label>
                                                 </div>
-                                                <input class="form-control" type="password" name="password" placeholder="Enter Password">
+                                                <input class="form-control" type="password" name="password" placeholder="Enter Password" value="{{old('password')}}">
                                             </div>
                                         </div>
                                     </div>
@@ -108,6 +114,8 @@
             </div>
         </section>
     </div>
+
+    
 
     <!-- Backend Bundle JavaScript -->
     <script src="{{asset('templates/datum/js/backend-bundle.min.js')}}"></script>
