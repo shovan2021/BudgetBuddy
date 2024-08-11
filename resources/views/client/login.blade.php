@@ -76,12 +76,13 @@
                                     <p class="line-around text-secondary mb-0"><span class="line-around-1">or login with
                                             email</span></p>
                                 </div>
-                                <form>
+                                <form method="POST" action="{{route('landing.process_login')}}">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="text-secondary">Email</label>
-                                                <input class="form-control" type="email" placeholder="Enter Email">
+                                                <input class="form-control" type="email" name="email" placeholder="Enter Email">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mt-2">
@@ -90,8 +91,7 @@
                                                     <label class="text-secondary">Password</label>
                                                     <label><a href="auth-recover-pwd.html">Forgot Password?</a></label>
                                                 </div>
-                                                <input class="form-control" type="password"
-                                                    placeholder="Enter Password">
+                                                <input class="form-control" type="password" name="password" placeholder="Enter Password">
                                             </div>
                                         </div>
                                     </div>

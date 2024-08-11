@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LandingController extends Controller
 {
@@ -11,5 +12,32 @@ class LandingController extends Controller
             'section' => 'Login',
         ];
         return view('client.login',$viewData);
+    }
+
+    public function processLogin(Request $request){
+
+        // dd($request);
+
+        $email = $request->post('email');
+        $password = $request->post('password');
+
+        // dd($request->all());
+        // dd($email);
+
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            // Authentication passed...
+            // return redirect()->intended('dashboard');
+            // dd('good');
+            return redirect()->route('dashboard.index'); 
+        }else{
+            dd('failed');
+        }
+    }
+
+    public function dashboardSection(Request $request){
+        $viewData = [
+            'section' => 'Dashboard',
+        ];
+        return view('client.dashboard',$viewData);
     }
 }
