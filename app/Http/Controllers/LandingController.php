@@ -24,7 +24,7 @@ class LandingController extends Controller
         // dd($request->all());
         // dd($email);
 
-        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+        if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => '1'])) {
             // Authentication passed...
             // return redirect()->intended('dashboard');
             // dd('good');
@@ -32,12 +32,5 @@ class LandingController extends Controller
         }else{
             dd('failed');
         }
-    }
-
-    public function dashboardSection(Request $request){
-        $viewData = [
-            'section' => 'Dashboard',
-        ];
-        return view('client.dashboard',$viewData);
     }
 }
