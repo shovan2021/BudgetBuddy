@@ -32,6 +32,10 @@ class UserFactory extends Factory
             'full_name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
             'password' => bcrypt('password'),
+            'phone' => $this->faker->numberBetween(7000000000,9999999999),
+            'address' => $this->faker->sentence(),
+            'about' => $this->faker->text(1000),
+            'profile_picture' => null,
             'added_time' => $randomTimestamp,
             'last_updated_time' => null,
             'status' => '1'
