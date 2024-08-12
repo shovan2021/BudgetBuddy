@@ -10,6 +10,7 @@ class DashboardController extends Controller
     public function dashboardSection(Request $request){
 
         $user = Auth::user();
+        $user->full_name = $user->first_name.' '.$user->last_name;
 
         $viewData = [
             'section' => 'Dashboard',

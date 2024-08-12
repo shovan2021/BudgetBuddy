@@ -18,7 +18,7 @@
         <nav class="iq-sidebar-menu">
             <ul id="iq-sidebar-toggle" class="side-menu">
                 <li class="active sidebar-layout">
-                    <a href="../backend/index.html" class="svg-icon">
+                    <a href="{{route('dashboard.index')}}" class="svg-icon">
                         <i class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">

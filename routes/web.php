@@ -17,5 +17,6 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
 
 Route::middleware('auth')->controller(AccountController::class)->group(function(){
     Route::get('my-profile','myProfileSection')->name('profile.view');
+    Route::get('edit-profile','editProfileSection')->name('profile.edit');
 });
  
